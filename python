@@ -1,0 +1,32 @@
+def computepay(h, r):
+    if h <= 40.0:
+        p = h * r
+    else:
+        p = 40.0 * r
+        p += (h - 40.0) * (r * 1.5)
+
+    p = round(p, 2)
+
+    return p
+
+
+hrs = input("Enter Hours:")
+
+try:
+    hrs = float(hrs)
+
+    rate = input("Enter Rate:")
+
+    try:
+        rate = float(rate)
+        Pay = computepay(hrs, rate)
+        print('Pay',Pay)
+
+    except:
+        print('Error, please enter numeric input')
+
+except:
+    print('Error, please enter numeric input')
+
+
+
